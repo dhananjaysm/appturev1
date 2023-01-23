@@ -1,3 +1,4 @@
+import Navbar from '#/ui/landing/navbar';
 import Head from 'next/head';
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
@@ -15,7 +16,10 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <title>Appture</title>
       </Head>
       <div {...divProps} className={`min-h-screen flex flex-col ${justify}`}>
-        {/* <NavBar /> */}
+        <div className="width70">
+          <Navbar />
+        </div>
+
         <main className="w-full px-5">{children}</main>
         <div className="m-auto" />
         {/* <Footer /> */}
