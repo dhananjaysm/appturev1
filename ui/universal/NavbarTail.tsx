@@ -2,10 +2,11 @@
 
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Lottie from 'lottie-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-
+import arrow_arc from './arrow_arc.json';
 const navigation = [
   { name: 'Home', href: '#' },
   { name: 'Services', href: '#' },
@@ -48,6 +49,13 @@ const NavbarTail = () => {
       </div>
       {pathname?.split('/').slice(1).includes('contact') ? null : (
         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
+          <Lottie
+            animationData={arrow_arc}
+            loop={true}
+            className="w-10"
+            size={20}
+          />
+
           <Link
             href="/contact"
             className="inline-block group from-[#2B81BA] via-blue-500 to-purple-500 bg-[length:400%_400%]  bg-gradient-to-r animate-border px-6 py-3  leading-6 text-gray-900 rounded-lg shadow-sm  ring-1 ring-gray-900/10 "
