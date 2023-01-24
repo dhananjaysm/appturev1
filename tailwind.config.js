@@ -15,6 +15,8 @@ module.exports = {
       // https://vercel.com/design/color
       animation: {
         'spin-slow': 'spin 5s linear infinite',
+        bounce: 'bounce 1s infinite',
+        border: 'border 4s ease infinite',
       },
       colors: {
         yellowLogo: '#FFC100',
@@ -44,6 +46,10 @@ module.exports = {
         )}, 50px, ${theme('colors.gray.300')} 50%)`,
       }),
       keyframes: ({ theme }) => ({
+        border: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
         rerender: {
           '0%': {
             ['border-color']: theme('colors.vercel.pink'),

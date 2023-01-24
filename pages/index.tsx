@@ -7,7 +7,7 @@ const Home: NextPageWithLayout = () => {
   return (
     <div className="bg-white isolate">
       <main>
-        <div className="flex justify-center">
+        <div className="flex justify-center p-6">
           <HeroSection />
         </div>
       </main>

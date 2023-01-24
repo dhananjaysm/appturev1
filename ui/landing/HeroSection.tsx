@@ -2,19 +2,20 @@
 
 const HeroSection = () => {
   return (
-    <div className="grid w-full h-screen grid-cols-1 px-4 font-medium md:grid-cols-2 ">
-      <div className="flex flex-col items-center justify-center px-4 ">
-        <h1 className="text-6xl md:text-7xl">
+    <div className="grid w-full grid-cols-1 px-4 font-medium lg:h-screen md:grid-cols-2 ">
+      <div className="flex flex-col items-center px-4 py-4 lg:justify-center ">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">
           {' '}
-          Driving Digitization For Businesses
+          Providing Technology Solutions to Businesses
         </h1>
         <h2>
-          Grow, Centralize & Get Real-Time Control of your business by building
-          ERP, Websites, Android & iOS Apps
+          We also provide services in areas of Search Engine Optimization,
+          eCommerce solution, Content management system, domain and hosting, Web
+          promotion and graphic design.
         </h2>
       </div>
-      <div className="flex items-center justify-center bg w-50 h-50 ">
-        <img src="lottie.png" className="object-fit" />
+      <div className="flex flex-col items-center lg:justify-center w-50 h-50 ">
+        <img src="lottie.png" className="" />
       </div>
     </div>
   );

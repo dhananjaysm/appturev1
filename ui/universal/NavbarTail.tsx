@@ -20,7 +20,8 @@ const NavbarTail = () => {
     <div className="fixed top-0 z-10 flex items-center justify-between w-full h-20 px-6 py-4 bg-white border-b lg:px-8 ">
       <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
         <Link href="/" className="-m-1.5 p-1.5">
-          <span className="text-3xl font-bold">Appture</span>
+          {/* <span className="text-3xl font-bold">Appture</span> */}
+          <img src="appture_logo.png" />
         </Link>
       </div>
       <div className="flex lg:hidden">
@@ -49,9 +50,9 @@ const NavbarTail = () => {
         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
           <Link
             href="/contact"
-            className="inline-block px-6 py-3 font-medium leading-6 text-gray-900 rounded-lg shadow-sm text-md ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+            className="inline-block group from-[#2B81BA] via-blue-500 to-purple-500 bg-[length:400%_400%]  bg-gradient-to-r animate-border px-6 py-3  leading-6 text-gray-900 rounded-lg shadow-sm  ring-1 ring-gray-900/10 "
           >
-            Contact
+            <span className="font-medium text-white text-md">Contact</span>
           </Link>
         </div>
       )}
@@ -64,7 +65,9 @@ const NavbarTail = () => {
           <div className="flex items-center justify-between h-9">
             <div className="flex">
               <a href="#" className="-m-1.5 p-1.5">
-                <span className="text-3xl font-bold">Appture</span>
+                {/* <span className="text-3xl font-bold">Appture</span> */}
+                <img src="appture_logo.png" />
+
                 {/* <img
                 className="h-8"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -99,9 +102,9 @@ const NavbarTail = () => {
               <div className="py-6">
                 <Link
                   href="/contact"
-                  className="inline-block w-full px-3 py-3 text-lg font-semibold leading-6 text-center text-gray-900 rounded-lg shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+                  className="inline-block w-full px-3 py-3 text-lg font-semibold leading-6 text-center text-gray-900 rounded-lg shadow-sm animate-border  bg-white from-pink-500 via-red-500 to-yellow-500 bg-[length:400%_400%]  hover:bg-gradient-to-r"
                 >
-                  Contact
+                  <span className="block px-5 py-3 text-black ">Contact</span>
                 </Link>
               </div>
             </div>
