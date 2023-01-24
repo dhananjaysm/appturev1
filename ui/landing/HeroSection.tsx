@@ -39,7 +39,7 @@ const HeroSection = () => {
   return (
     <div className="grid w-full grid-cols-1 px-4 font-medium lg:h-screen md:grid-cols-2 ">
       <div className="flex flex-col px-4 py-4 lg:justify-center ">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+        <h1 className="text-3xl tracking-wide sm:text-4xl md:text-5xl lg:text-6xl">
           {' '}
           Providing <span className="text-[#2B81BA]">
             Technology Solutions
