@@ -102,9 +102,11 @@ const NavbarTail = () => {
               <div className="py-6">
                 <Link
                   href="/contact"
-                  className="inline-block w-full px-3 py-3 text-lg font-semibold leading-6 text-center text-gray-900 rounded-lg shadow-sm animate-border  bg-white from-pink-500 via-red-500 to-yellow-500 bg-[length:400%_400%]  hover:bg-gradient-to-r"
+                  className="inline-block group w-full text-center from-[#2B81BA] via-blue-500 to-purple-500 bg-[length:400%_400%]  bg-gradient-to-r animate-border px-6 py-3  leading-6 text-gray-900 rounded-lg shadow-sm  ring-1 ring-gray-900/10 "
                 >
-                  <span className="block px-5 py-3 text-black ">Contact</span>
+                  <span className="text-lg font-medium text-white">
+                    Contact
+                  </span>
                 </Link>
               </div>
             </div>

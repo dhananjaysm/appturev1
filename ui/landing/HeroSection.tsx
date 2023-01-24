@@ -9,9 +9,8 @@ const HeroSection = () => {
           Providing Technology Solutions to Businesses
         </h1>
         <h2>
-          We also provide services in areas of Search Engine Optimization,
-          eCommerce solution, Content management system, domain and hosting, Web
-          promotion and graphic design.
+          We provide services in areas of SEO, e-Commerce, CMS, Domain and
+          Hosting, Web Promotion and Graphic Design.
         </h2>
       </div>
       <div className="flex flex-col items-center lg:justify-center w-50 h-50 ">
