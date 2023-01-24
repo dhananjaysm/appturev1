@@ -1,3 +1,4 @@
+import Form from '#/Components/Form';
 import FooterSection from '#/ui/landing/FooterSection';
 import NavbarTail from '#/ui/universal/NavbarTail';
 import Head from 'next/head';
@@ -20,6 +21,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
         <NavbarTail />
         <main className="w-full mt-20">{children}</main>
         <div className="m-auto" />
+        <Form />
         <FooterSection />
       </div>
     </>
