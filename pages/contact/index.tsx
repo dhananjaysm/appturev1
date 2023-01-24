@@ -1,11 +1,22 @@
-import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
+import FormContact from '#/Components/FormContact';
+import ContactLayout from '#/ui/layouts/primary/ContactLayout';
 import { NextPageWithLayout } from '../page';
 
 const Contact: NextPageWithLayout = () => {
-  return <div>Contact</div>;
+  return (
+    <div className="py-6 bg-gray-900">
+      {/* <div className="mx-auto">
+        <h1 className="text-4xl font-bold text-white">Contact Us</h1>
+      </div> */}
+
+      <div>
+        <FormContact />
+      </div>
+    </div>
+  );
 };
 
 export default Contact;
 Contact.getLayout = (page) => {
-  return <PrimaryLayout>{page}</PrimaryLayout>;
+  return <ContactLayout>{page}</ContactLayout>;
 };

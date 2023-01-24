@@ -6,7 +6,7 @@ const contactDetails = {
 };
 export default function Form() {
   return (
-    <div className="flex w-full py-8 bg-white items-top dark:bg-gray-900">
+    <div className="flex w-full py-8 bg-gray-900 items-top">
       <div className="mx-auto sm:px-6 lg:px-8">
         <div className="w-full mt-8 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -93,7 +93,7 @@ export default function Form() {
 
             <form className="flex flex-col justify-center p-6">
               <div className="flex flex-col justify-between md:flex-row">
-                <div className="flex flex-col md:mr-2 md:w-1/2">
+                <div className="flex flex-col md:mt-2 md:mr-2 md:w-1/2">
                   <label className="hidden">Full Name</label>
                   <input
                     type="name"
@@ -103,7 +103,7 @@ export default function Form() {
                     className="w-full px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
-                <div className="flex flex-col md:w-1/2 ">
+                <div className="flex flex-col mt-2 md:w-1/2">
                   <label className="hidden">Number</label>
                   <input
                     type="tel"
@@ -139,7 +139,7 @@ export default function Form() {
 
               <button
                 type="submit"
-                className="px-6 py-3 mt-3 font-bold text-white transition duration-300 ease-in-out bg-indigo-600 rounded-lg md:w-32 hover:bg-blue-dark hover:bg-indigo-500"
+                className="px-6 py-3 mt-3 font-bold text-white transition duration-300 ease-in-out from-[#2B81BA] via-blue-500 to-purple-500 bg-[length:400%_400%]  bg-gradient-to-r animate-border rounded-lg md:w-32 hover:bg-blue-dark hover:bg-indigo-500"
               >
                 Submit
               </button>

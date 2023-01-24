@@ -43,7 +43,7 @@ const PortfolioSection = () => {
               <img
                 src={client.image}
                 className={clsx(
-                  'grayscale hover:grayscale-0 transition-all duration-300'
+                  'sm:grayscale hover:grayscale-0 transition-all duration-300'
                 )}
               />
             </div>
