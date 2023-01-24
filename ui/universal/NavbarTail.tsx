@@ -23,7 +23,7 @@ const NavbarTail = () => {
       <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
         <Link href="/" className="-m-1.5 p-1.5">
           {/* <span className="text-3xl font-bold">Appture</span> */}
-          <img src="appture_logo.png" />
+          <img src="appture-png-min.png" className="w-40" />
         </Link>
       </div>
       <div className="flex lg:hidden">
@@ -75,7 +75,7 @@ const NavbarTail = () => {
             <div className="flex">
               <a href="#" className="-m-1.5 p-1.5">
                 {/* <span className="text-3xl font-bold">Appture</span> */}
-                <img src="appture_logo.png" />
+                <img src="appture-png-min.png" />
 
                 {/* <img
                 className="h-8"
