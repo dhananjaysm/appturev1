@@ -8,10 +8,11 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import arrow_arc from './arrow_arc.json';
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'Portfolio', href: '#' },
-  { name: 'About Us', href: 'about' },
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Careers', href: '/careers' },
 ];
 const NavbarTail = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

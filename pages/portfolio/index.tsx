@@ -1,11 +1,11 @@
 import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from '../page';
 
-const Contact: NextPageWithLayout = () => {
-  return <div>Contact</div>;
+const Portfolio: NextPageWithLayout = () => {
+  return <div>Portfolio</div>;
 };
 
-export default Contact;
-Contact.getLayout = (page) => {
+export default Portfolio;
+Portfolio.getLayout = (page) => {
   return <PrimaryLayout>{page}</PrimaryLayout>;
 };
