@@ -1,4 +1,4 @@
-import contact_lottie from '#/Components/contact_us.json';
+import contact_lottie from '#/ui/contact/contact_us.json';
 import Lottie from 'lottie-react';
 const contactDetails = {
   address:

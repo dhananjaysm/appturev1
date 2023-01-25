@@ -1,4 +1,4 @@
-import Form from '#/Components/Form';
+import Form from '#/ui/contact/FormContact';
 import FooterSection from '#/ui/landing/FooterSection';
 import NavbarTail from '#/ui/universal/NavbarTail';
 import Head from 'next/head';
@@ -19,6 +19,8 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
       </Head>
       <div {...divProps} className={`min-h-screen flex flex-col ${justify}`}>
         <NavbarTail />
+        {/* <MyComponent /> */}
+
         <main className="w-full mt-20">{children}</main>
         <div className="m-auto" />
         <Form />

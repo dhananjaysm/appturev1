@@ -1,11 +1,13 @@
 'use client';
 
+import { useScrollStore } from '#/styles/store';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import Lottie from 'lottie-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import arrow_arc from './arrow_arc.json';
 const navigation = [
   { name: 'Home', href: '/' },
@@ -17,13 +19,52 @@ const navigation = [
 const NavbarTail = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { scrolling, scroll } = useScrollStore((s) => s);
+  const handleScroll = () => {
+    // your scroll effects logic here
+    let scrollTop = window.pageYOffset;
+    // let header = document.getElementById('header');
+    if (scrollTop > 200) {
+      // console.log('yes');
+      scrolling(true);
+    } else {
+      scrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  // console.log(scroll);
   //   console.log(pathname?.split('/').slice(1)[0]);
   return (
-    <div className="fixed top-0 z-10 flex items-center justify-between w-full h-20 px-6 py-4 bg-white border-b lg:px-8 ">
+    <div
+      className={clsx(
+        'fixed top-0 z-10 flex items-center justify-between w-full h-20 px-6 py-4 bg-white border-b lg:px-8 ',
+        {
+          '': scroll,
+        }
+      )}
+    >
       <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
         <Link href="/" className="-m-1.5 p-1.5">
-          {/* <span className="text-3xl font-bold">Appture</span> */}
-          <img src="appture-png-min.png" className="w-40" />
+          {/* {scroll ? (
+            <img src="appture-logo-only1.png" className="w-10 " />
+          ) : (
+            <img src="appture-png-min1.png" className=" w-44" />
+          )} */}
+          <div className={clsx('flex flex-row w-44', { 'w-10': !scroll })}>
+            <img src="appture-logo-only.png" className="w-12" />
+
+            <img
+              src="appture-name.png"
+              className={clsx('block', { hidden: scroll })}
+            />
+          </div>
         </Link>
       </div>
       <div className="flex lg:hidden">
@@ -75,7 +116,7 @@ const NavbarTail = () => {
             <div className="flex">
               <a href="#" className="-m-1.5 p-1.5">
                 {/* <span className="text-3xl font-bold">Appture</span> */}
-                <img src="appture-png-min.png" />
+                <img src="appture-png-min1.png" className="w-44" />
 
                 {/* <img
                 className="h-8"

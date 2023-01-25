@@ -1,3 +1,4 @@
+const { url } = require('inspector');
 const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
@@ -6,7 +7,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './page/**/*.{js,ts,jsx,tsx}',
     './ui/**/*.{js,ts,jsx,tsx}',
-    './Components/**/*.{js,ts,jsx,tsx}'
+    './Components/**/*.{js,ts,jsx,tsx}',
   ],
   future: {
     hoverOnlyWhenSupported: true,
@@ -45,6 +46,8 @@ module.exports = {
         'vc-border-gradient': `radial-gradient(at left top, ${theme(
           'colors.gray.100'
         )}, 50px, ${theme('colors.gray.300')} 50%)`,
+        'large-logo': "url('/appture-png-min.png')",
+        'small-logo': "url('/appture-logo-only.png')",
       }),
       keyframes: ({ theme }) => ({
         border: {

@@ -1,4 +1,4 @@
-import FormContact from '#/Components/FormContact';
+import FormContact from '#/ui/contact/FormContact';
 import ContactLayout from '#/ui/layouts/primary/ContactLayout';
 import { NextPageWithLayout } from '../page';
 
