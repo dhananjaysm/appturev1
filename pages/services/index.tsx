@@ -1,8 +1,13 @@
+import ServicesHeroSection from '#/Components/Services/services';
 import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from '../page';
 
 const Services: NextPageWithLayout = () => {
-  return <div>Services</div>;
+  return (
+    <div>
+      <ServicesHeroSection />
+    </div>
+  );
 };
 
 export default Services;
