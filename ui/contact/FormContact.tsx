@@ -94,7 +94,9 @@ export default function FormContact() {
                 </div>
               </div>
 
-              <form className="flex flex-col justify-center p-6">
+              <form onSubmit={e => {
+                e.preventDefault()
+              }} className="flex flex-col justify-center p-6">
                 <div className="flex flex-col justify-between md:flex-row">
                   <div className="flex flex-col md:mr-2 md:w-1/2">
                     <label className="hidden">Full Name</label>
