@@ -1,13 +1,13 @@
-import Form from '#/ui/contact/Form';
+import CareerHeroSection from '#/ui/career/CareerHeroSection';
 import FooterSection from '#/ui/landing/FooterSection';
 import NavbarTail from '#/ui/universal/NavbarTail';
 import Head from 'next/head';
 
-export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
+export interface ICareerLayout extends React.ComponentPropsWithoutRef<'div'> {
   justify?: 'items-center' | 'items-start';
 }
 
-const PrimaryLayout: React.FC<IPrimaryLayout> = ({
+const CareerLayout: React.FC<ICareerLayout> = ({
   children,
   justify = 'items-center',
   ...divProps
@@ -19,15 +19,15 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
       </Head>
       <div {...divProps} className={`min-h-screen flex flex-col ${justify}`}>
         <NavbarTail />
-        {/* <MyComponent /> */}
-
-        <main className="w-full mt-16">{children}</main>
-        <div className="m-auto" />
-        <Form />
+        <main className="w-full px-6 mt-32 sm:px-12">
+          <CareerHeroSection />
+          {children}
+        </main>
+        {/* <Form /> */}
         <FooterSection />
       </div>
     </>
   );
 };
 
-export default PrimaryLayout;
+export default CareerLayout;

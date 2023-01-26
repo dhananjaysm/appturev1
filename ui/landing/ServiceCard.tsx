@@ -1,17 +1,22 @@
 import Lottie from 'lottie-react';
+import Link from 'next/link';
 import { Service } from './ServicesSection';
 
 const ServiceCard = ({ name, description, url, lottie }: Service) => {
   return (
-    <div className="px-8 py-12 bg-white shadow-xl rounded-2xl sm:px-12 lg:px-8">
-      <div className="mb-6 space-y-2">
-        <h3 className="text-2xl font-semibold text-purple-900">{name}</h3>
-        <p className="mb-6">{description}</p>
-        <a href={url} className="block font-medium text-purple-600">
+    <div className="px-8 transition duration-300 transform bg-white shadow-xl hover:scale-105 hover:shadow-2xl rounded-2xl sm:px-12 lg:px-8">
+      <div className="flex flex-col justify-between h-full py-6 mb-6">
+        <h3 className="text-xl font-semibold text-purple-900">{name}</h3>
+        <p className="hidden mb-6 text-base sm:block ">{description}</p>
+
+        <Lottie animationData={lottie} loop={true} className="w-64 h-64 " />
+        <Link
+          href={url}
+          className="justify-start block font-medium text-purple-600"
+        >
           Know more
-        </a>
+        </Link>
       </div>
-      <Lottie animationData={lottie} loop={true} className="w-full h-1/2" />
     </div>
   );
 };

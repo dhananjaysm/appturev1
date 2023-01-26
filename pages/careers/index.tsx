@@ -1,11 +1,17 @@
-import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
+import CareerSection from '#/ui/career/CareerSection';
+import CareerLayout from '#/ui/layouts/primary/CareerLayout';
 import { NextPageWithLayout } from '../page';
 
 const Career: NextPageWithLayout = () => {
-  return <div>Career</div>;
+  return (
+    <div className="px-6 mt-12 sm:px-12">
+      {/* <CareerHeroSection /> */}
+      <CareerSection />
+    </div>
+  );
 };
 
 export default Career;
 Career.getLayout = (page) => {
-  return <PrimaryLayout>{page}</PrimaryLayout>;
+  return <CareerLayout>{page}</CareerLayout>;
 };

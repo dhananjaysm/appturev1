@@ -6,7 +6,7 @@ const contactDetails = {
   phone: '01412729706',
   email: 'info@appturetechnology.com',
 };
-export default function Form() {
+export default function FormContact() {
   return (
     <div className="flex w-full bg-gray-900 items-top">
       <div className="mx-auto sm:px-6 lg:px-8">
@@ -17,9 +17,9 @@ export default function Form() {
                 <h1 className="text-4xl font-extrabold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
                   Get in touch
                 </h1>
-                <p className="mt-2 text-lg font-medium text-gray-600 text-normal sm:text-2xl dark:text-gray-400">
+                {/* <p className="mt-2 text-lg font-medium text-gray-600 text-normal sm:text-2xl dark:text-gray-400">
                   Fill in the form to start a conversation
-                </p>
+                </p> */}
 
                 <div className="flex items-center mt-8 text-gray-600 dark:text-gray-400">
                   <svg

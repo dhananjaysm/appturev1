@@ -11,7 +11,7 @@ const HeroSection = () => {
           <span className="text-[#2B81BA]">Empowering </span>your company with
           top-notch tech resources
         </h1>
-        <h2 className="hidden mt-2 mb-2 tracking-wide sm:block">
+        <h2 className="mt-2 mb-2 tracking-wide ">
           We provide expert resources, software development, mobile development,
           web development, digital marketing and training to help your business
           succeed in today's digital landscape.

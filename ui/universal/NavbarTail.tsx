@@ -1,6 +1,6 @@
 'use client';
 
-import { useScrollStore } from '#/styles/store';
+import { useScrollStore } from '#/lib/store';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
@@ -49,6 +49,13 @@ const NavbarTail = () => {
           '': scroll,
         }
       )}
+
+      // className={clsx(
+      //   'fixed top-0 z-10 mt-4 rounded-md flex items-center justify-between w-5/6 h-20 px-6 py-4 bg-white  lg:px-8 ',
+      //   {
+      //     'border-2  shadow-md': scroll,
+      //   }
+      // )}
     >
       <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
         <Link href="/" className="-m-1.5 p-1.5">
@@ -57,12 +64,12 @@ const NavbarTail = () => {
           ) : (
             <img src="appture-png-min1.png" className=" w-44" />
           )} */}
-          <div className={clsx('flex flex-row w-44', { 'w-10': !scroll })}>
-            <img src="appture-logo-only.png" className="w-12" />
+          <div className={clsx('flex flex-row w-54', { 'w-12': scroll })}>
+            <img src="appture-logo-only.png" className="w-10" />
 
             <img
               src="appture-name.png"
-              className={clsx('block', { hidden: scroll })}
+              className={clsx('block w-36', { hidden: scroll })}
             />
           </div>
         </Link>
@@ -116,7 +123,7 @@ const NavbarTail = () => {
             <div className="flex">
               <a href="#" className="-m-1.5 p-1.5">
                 {/* <span className="text-3xl font-bold">Appture</span> */}
-                <img src="appture-png-min1.png" className="w-44" />
+                <img src="appture-png-min.png" className="w-44" />
 
                 {/* <img
                 className="h-8"
