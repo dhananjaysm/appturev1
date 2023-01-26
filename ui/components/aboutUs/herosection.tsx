@@ -4,7 +4,7 @@ import hr_lottie from '../../landing/lottie_files/hr_lottie.json';
 
 const AboutUsHeroSection = () => {
   return (
-    <div className="px-6 md:px-12 md:pb-4 md:pt-10 bg-gray-50 text-gray-800 text-left bg-red ">
+    <div className="px-6 md:px-12 md:pb-4 md:pt-10 bg-gray-50 text-gray-800 text-left">
       <div className="container mx-auto xl:px-32 flex flex-col md:flex-row items-center ">
         <div className=" w-full md:w-[65%]">
           <div className="mt-12 lg:mt-0 w-full lg:w-12/12">
