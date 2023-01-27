@@ -5,10 +5,30 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Lottie from 'lottie-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import arrow_arc from './arrow_arc.json';
+
+const BackgroundImage = styled.div`
+  background-image: url('/bubbles.png');
+  background-size: cover;
+  background-position: center;
+  @animation: moveBg 15s linear infinite;
+  @keyframes moveBg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+`;
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
@@ -22,14 +42,15 @@ const NavbarTail = () => {
   const { scrolling, scroll } = useScrollStore((s) => s);
   const handleScroll = () => {
     // your scroll effects logic here
-    let scrollTop = window.pageYOffset;
+    let scrollTop = window.scrollY;
+    let lastScrollTop = 0;
     // let header = document.getElementById('header');
-    if (scrollTop > 200) {
-      // console.log('yes');
+    if (scrollTop > lastScrollTop) {
       scrolling(true);
     } else {
       scrolling(false);
     }
+    lastScrollTop = scrollTop;
   };
 
   useEffect(() => {
@@ -44,9 +65,10 @@ const NavbarTail = () => {
   return (
     <div
       className={clsx(
-        'fixed top-0 z-10 flex items-center justify-between w-full h-20 px-6 py-4 bg-white border-b lg:px-8 ',
+        'fixed top-0 z-10 flex items-center justify-between w-full h-20 px-6 py-4  lg:px-8 ',
         {
-          '': scroll,
+          'bg-white border-b': !scroll,
+          'bg-gradient-to-b from-gray-800/40 to-transparent ': scroll,
         }
       )}
 
@@ -65,16 +87,27 @@ const NavbarTail = () => {
             <img src="appture-png-min1.png" className=" w-44" />
           )} */}
           <div className={clsx('flex flex-row w-54', { 'w-12': scroll })}>
-            <img src="appture-logo-only.png" className="w-10" />
+            <Image
+              alt="small-logo"
+              src={'/appture-logo-only.png'}
+              width={40}
+              height={20}
+            />
+            {/* <BackgroundImage>
+              <h1 className="text-5xl text-white text-opacity-75">A</h1>
+            </BackgroundImage> */}
 
-            <img
-              src="appture-name.png"
-              className={clsx('block w-36', { hidden: scroll })}
+            <Image
+              alt="big-logo"
+              src={'/appture-name.png'}
+              width={144}
+              height={20}
+              className={clsx('block ', { hidden: scroll })}
             />
           </div>
         </Link>
       </div>
-      <div className="flex lg:hidden">
+      <div className={clsx('flex lg:hidden ', { hidden: scroll })}>
         <button
           type="button"
           className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -89,7 +122,10 @@ const NavbarTail = () => {
           <Link
             key={item.name}
             href={item.href}
-            className="font-semibold text-gray-900 transition duration-500 group "
+            className={clsx(
+              'font-semibold text-gray-900 transition duration-500 group ',
+              { hidden: scroll }
+            )}
           >
             {item.name}
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-sky-600"></span>
@@ -123,7 +159,12 @@ const NavbarTail = () => {
             <div className="flex">
               <a href="#" className="-m-1.5 p-1.5">
                 {/* <span className="text-3xl font-bold">Appture</span> */}
-                <img src="appture-png-min.png" className="w-44" />
+                <Image
+                  alt="menu-logo-image"
+                  src={'/appture-png-min.png'}
+                  width={144}
+                  height={20}
+                />
 
                 {/* <img
                 className="h-8"

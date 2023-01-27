@@ -21,3 +21,11 @@ export const useFilterStore = create<FilterState>()((set) => ({
   filter: filters[0],
   selectFilter: (filter) => set((state) => ({ filter: filter })),
 }));
+
+interface CareerState {
+  careers: any;
+}
+
+/*
+THIS if for form
+*/

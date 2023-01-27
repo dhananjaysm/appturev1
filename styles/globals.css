@@ -2,21 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.navbar {
-  width: 100%;
+.filters::-webkit-scrollbar {
+  width: 0;
 }
 
-.width70 {
-    width: 100%;
-    padding-left: 15%;
-    padding-right: 15%;
-    height: 80px;
+.logo-text {
+  background-size: 37px auto;
+  background: repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-animation: background 18s infinite linear;
+  animation: background 18s infinite linear;
 }
-
-@media only screen and (max-width: 600px) {
-    .width70 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-  }
-  

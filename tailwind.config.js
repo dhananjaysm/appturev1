@@ -48,6 +48,7 @@ module.exports = {
         )}, 50px, ${theme('colors.gray.300')} 50%)`,
         'large-logo': "url('/appture-png-min.png')",
         'small-logo': "url('/appture-logo-only.png')",
+        'logo-back': "url('/bubbles.png')",
       }),
       keyframes: ({ theme }) => ({
         border: {
