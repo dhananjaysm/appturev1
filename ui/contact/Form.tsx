@@ -1,5 +1,3 @@
-import React from 'react';
-
 const contactDetails = {
   address:
     '225 Second Floor, Balaji Tower 6th, Near Radisson Blu, Durgapur, Jaipur 302018',
@@ -7,22 +5,18 @@ const contactDetails = {
   email: 'info@appturetechnology.com',
 };
 export default function Form() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // e.preventDefault();
-    console.log('yes');
-  };
   return (
     <div className="flex w-full py-8 bg-gray-900 items-top">
       <div className="mx-auto sm:px-6 lg:px-8">
         <div className="w-full mt-8 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-6 mx-6 bg-gray-100/20 backdrop-blur-md sm:rounded-lg">
+            <div className="p-6 mx-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
                 Get in touch
               </h1>
-              {/* <p className="mt-2 text-lg font-medium text-gray-600 text-normal sm:text-2xl dark:text-gray-400">
-                Fill in the details 
-              </p> */}
+              <p className="mt-2 text-lg font-medium text-gray-600 text-normal sm:text-2xl dark:text-gray-400">
+                Fill in the form to start a conversation
+              </p>
 
               <div className="flex items-center mt-8 text-gray-600 dark:text-gray-400">
                 <svg
@@ -97,13 +91,7 @@ export default function Form() {
               </div>
             </div>
 
-            <form
-              className="flex flex-col justify-center p-6"
-              onSubmit={(e) => {
-                // handleSubmit(e);
-                console.log('hello');
-              }}
-            >
+            <form className="flex flex-col justify-center p-6">
               <div className="flex flex-col justify-between md:flex-row">
                 <div className="flex flex-col md:mt-2 md:mr-2 md:w-1/2">
                   <label className="hidden">Full Name</label>

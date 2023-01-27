@@ -1,4 +1,4 @@
-import ServicesHeroSection from '#/Components/Services/services';
+import ServicesHeroSection from '#/ui/components/services/services';
 import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from '../page';
 
