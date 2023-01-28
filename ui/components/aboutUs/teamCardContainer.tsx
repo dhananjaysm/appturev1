@@ -50,9 +50,9 @@ export default function TeamCardContainer() {
         <div className="grid-cols-1 grid  sm:grid-cols-2 lg:grid-cols-3 gap-[4px] w-full ">
           {team.map((service, index) => (
             <div key={index} className="flex flex-col p-2 m-1 ">
-              <div className="relative h-64">
+              <div className="h-64">
                 <Lottie
-                  className="absolute inset-0"
+                  className="inset-0 w-full h-full aspect-ratio:1/1"
                   animationData={founderlottie}
                   loop={true}
                   height="100%"

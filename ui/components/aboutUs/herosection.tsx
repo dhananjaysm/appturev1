@@ -22,7 +22,11 @@ const AboutUsHeroSection = () => {
           </div>
         </div>
         <div className="w-full md:w-[30%]  flex justify-center">
-          <Lottie animationData={teamlottie} loop={true} className="w-full" />
+          <Lottie
+            animationData={teamlottie}
+            loop={true}
+            className="w-full h-full aspect-ratio:1/1"
+          />
         </div>
       </div>
     </div>

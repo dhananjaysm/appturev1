@@ -27,7 +27,11 @@ const HeroSection = () => {
       </div>
       <div className="flex flex-col items-center lg:justify-center ">
         {/* <img src="lottie.png" className="" /> */}
-        <Lottie animationData={hr_lottie} loop={true} className="w-full" />
+        <Lottie
+          animationData={hr_lottie}
+          loop={true}
+          className="w-full h-full aspect-ratio:1/1"
+        />
       </div>
     </div>
   );

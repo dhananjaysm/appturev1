@@ -64,7 +64,7 @@ const services: Service[] = [
 
 export default function ServicesHeroSection() {
   return (
-    <div className="px-6 text-left text-gray-800 md:p-12 md:mb-4 bg-gray-50 bg-red md:pt-36">
+    <div className="px-6 text-left text-gray-800 md:p-12  bg-gray-50 bg-red md:pt-36">
       <div className="container mx-auto xl:px-32">
         <div className="grid gap-12 lg:grid-cols-2">
           <div className="w-full mt-12 lg:mt-0 lg:w-12/12">
@@ -76,7 +76,7 @@ export default function ServicesHeroSection() {
             </h6>
           </div>
         </div>
-        <div className="grid w-full grid-cols-2 gap-2 mb-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 ">
+        <div className="grid w-full grid-cols-2 gap-2 pb-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 ">
           {services.map((service, index) => (
             <div
               key={index}
