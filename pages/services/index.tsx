@@ -1,5 +1,5 @@
 import ServicesHeroSection from '#/ui/components/services/services';
-import TechnologyWeUse from '#/ui/components/services/technologyWeUse';
+import TechnologyWeUse from '#/ui/components/services/TechnologyWeUse';
 import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from '../page';
 
