@@ -9,7 +9,7 @@ const ServiceCard = ({ name, description, url, lottie }: Service) => {
         <h3 className="text-xl font-semibold text-purple-900">{name}</h3>
         <p className="hidden mb-6 text-base sm:block ">{description}</p>
 
-        <Lottie animationData={lottie} loop={true} className="w-64 h-64 " />
+        {/* <Lottie animationData={lottie} loop={true} className="w-64 h-64 " /> */}
         <Link
           href={url}
           className="justify-start block font-medium text-purple-600"
