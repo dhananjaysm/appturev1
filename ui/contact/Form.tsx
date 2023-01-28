@@ -1,3 +1,4 @@
+
 'use client';
 
 import clsx from 'clsx';
@@ -41,12 +42,16 @@ const initialFormData: FormData = {
   experience: '',
 };
 
+
+import spinner from './dot-rotate.svg';
+
 const contactDetails = {
   address:
     '225 Second Floor, Balaji Tower 6th, Near Radisson Blu, Durgapur, Jaipur 302018',
   phone: '01412729706',
   email: 'info@appturetechnology.com',
 };
+
 export default function Form() {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState<Errors>({});
@@ -265,7 +270,13 @@ export default function Form() {
                 type="submit"
                 className="px-6 py-3 mt-3 font-bold text-white transition duration-300 ease-in-out from-[#2B81BA] via-blue-500 to-purple-500 bg-[length:400%_400%]  bg-gradient-to-r animate-border rounded-lg md:w-32 hover:bg-blue-dark hover:bg-indigo-500"
               >
-                Submit
+                {/* <svg
+                  className="animate-spin h-5 w-5 mr-3 ..."
+                  viewBox="0 0 24 24"
+                ></svg> */}
+                <img src={spinner} />
+                Processing...
+                {/* Submit */}
               </button>
             </form>
           </div>
