@@ -1,5 +1,46 @@
+'use client';
+
+import clsx from 'clsx';
+import { useState } from 'react';
 import contact_lottie from '#/ui/contact/contact_us.json';
 import Lottie from 'lottie-react';
+
+interface FormData {
+  name: string;
+  phoneNumber: string;
+  email: string;
+  message: string;
+  state: string;
+  postalCode: string;
+  profile: string;
+  aboutProfile: string;
+  experience: string;
+}
+
+interface Errors {
+  name?: string;
+  phoneNumber?: string;
+  email?: string;
+  message?: string;
+  state?: string;
+  postalCode?: string;
+  profile?: string;
+  aboutProfile?: string;
+  experience?: string;
+}
+
+const initialFormData: FormData = {
+  name: '',
+  phoneNumber: '',
+  email: '',
+  message: '',
+  state: '',
+  postalCode: '',
+  profile: '',
+  aboutProfile: '',
+  experience: '',
+};
+
 const contactDetails = {
   address:
     '225 Second Floor, Balaji Tower 6th, Near Radisson Blu, Durgapur, Jaipur 302018',
@@ -7,6 +48,52 @@ const contactDetails = {
   email: 'info@appturetechnology.com',
 };
 export default function FormContact() {
+  const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState<Errors>({});
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: null });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrors({});
+
+    let newErrors: { [key: string]: string } = {};
+
+    if (!formData.name) {
+      newErrors.name = 'First name is required';
+    }
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = 'Phone number is required';
+    } else if (
+      !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/.test(
+        formData.phoneNumber
+      )
+    ) {
+      newErrors.phoneNumber = 'Invalid phone number';
+    }
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+    if (!formData.message) {
+      newErrors.message = 'Message is required';
+    }
+
+    if (Object.keys(newErrors).length) {
+      setErrors(newErrors);
+    } else {
+      console.log(formData);
+
+      // Make API call or do something else with the form data
+    }
+  };
   return (
     <div className="flex w-full bg-gray-900 items-top">
       <div className="mx-auto sm:px-6 lg:px-8">
@@ -94,52 +181,91 @@ export default function FormContact() {
                 </div>
               </div>
 
-              <form onSubmit={e => {
-                e.preventDefault()
-              }} className="flex flex-col justify-center p-6">
+              <form
+                onSubmit={(e) => {
+                  handleSubmit(e);
+                }}
+                className="flex flex-col justify-center p-6"
+              >
                 <div className="flex flex-col justify-between md:flex-row">
                   <div className="flex flex-col md:mr-2 md:w-1/2">
                     <label className="hidden">Full Name</label>
                     <input
-                      type="name"
+                      type="text"
                       name="name"
-                      id="name"
-                      placeholder="Full Name"
-                      className="w-full px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
+                      // value={formData.name}
+                      onChange={(e) => handleChange(e)}
+                      placeholder="Enter full name"
+                      className={clsx(
+                        'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                        {
+                          'ring-2 ring-red-500 ring-offset-red-700':
+                            errors.name,
+                        }
+                      )}
                     />
+                    {errors.name && (
+                      <p className="text-red-500">{errors.name}</p>
+                    )}
                   </div>
                   <div className="flex flex-col md:w-1/2 ">
                     <label className="hidden">Number</label>
                     <input
-                      type="tel"
-                      name="tel"
-                      id="tel"
+                      type="text"
+                      name="phoneNumber"
                       placeholder="Phone Number"
-                      className="px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg w-100 dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
+                      onChange={(e) => handleChange(e)}
+                      className={clsx(
+                        'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                        {
+                          'ring-2 ring-red-500 ring-offset-red-700':
+                            errors.phoneNumber,
+                        }
+                      )}
                     />
+                    {errors.phoneNumber && (
+                      <p className="text-red-500">{errors.phoneNumber}</p>
+                    )}
                   </div>
                 </div>
 
                 <div className="flex flex-col mt-2">
                   <label className="hidden">Email</label>
                   <input
-                    type="email"
+                    type="text"
+                    onChange={(e) => handleChange(e)}
                     name="email"
-                    id="email"
                     placeholder="Email"
-                    className="px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg w-100 dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
+                    className={clsx(
+                      'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                      {
+                        'ring-2 ring-red-500 ring-offset-red-700': errors.email,
+                      }
+                    )}
                   />
+                  {errors.email && (
+                    <p className="text-red-500">{errors.email}</p>
+                  )}
                 </div>
 
                 <div className="flex flex-col mt-2">
                   <label className="hidden">Message</label>
                   <input
                     type="text"
+                    onChange={(e) => handleChange(e)}
                     name="message"
-                    id="message"
                     placeholder="Message"
-                    className="px-3 py-3 mt-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded-lg w-100 dark:bg-gray-800 dark:border-gray-700 focus:border-indigo-500 focus:outline-none"
+                    className={clsx(
+                      'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                      {
+                        'ring-2 ring-red-500 ring-offset-red-700':
+                          errors.message,
+                      }
+                    )}
                   />
+                  {errors.message && (
+                    <p className="text-red-500">{errors.message} sjdfa;lsdjf</p>
+                  )}
                 </div>
 
                 <button
