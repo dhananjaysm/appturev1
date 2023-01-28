@@ -1,7 +1,7 @@
 import founderlottie from '#/ui/landing/lottie_files/founder-blob.json';
 import clsx from 'clsx';
 import Lottie from 'lottie-react';
-import { TechnologyCardType } from './technologyWeUse';
+import { TechnologyCardType } from './TechnologyWeUse';
 
 export default function TechnologyWeUseCard({
   card,

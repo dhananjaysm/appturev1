@@ -1,4 +1,4 @@
-import TechnologyWeUseCard from './technologyWeUseCard';
+import TechnologyWeUseCard from './TechnologyWeUseCard';
 
 export type TechnologyCardType = {
   title: string;
@@ -34,7 +34,7 @@ const technologyCardArr: TechnologyCardType[] = [
   },
 ];
 
-export default function TechnologyWeUse() {
+const TechnologyWeUse = () => {
   return (
     <div className="px-6 text-left text-gray-800 md:p-12 md:mb-4 bg-gray-50 bg-red md:pt-36">
       <div className="container mx-auto xl:px-32">
@@ -54,4 +54,6 @@ export default function TechnologyWeUse() {
       </div>
     </div>
   );
-}
+};
+
+export default TechnologyWeUse;
