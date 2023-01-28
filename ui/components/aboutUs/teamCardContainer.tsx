@@ -1,4 +1,5 @@
-import React from 'react';
+import founderlottie from '#/ui/landing/lottie_files/founder-blob.json';
+import Lottie from 'lottie-react';
 type Team = {
   name: string;
   designation: string;
@@ -44,16 +45,26 @@ const team: Team[] = [
 
 export default function TeamCardContainer() {
   return (
-    <div className="px-6 md:p-12 bg-gray-50 text-gray-800 text-left md:pt-20">
-      <div className="container mx-auto xl:px-32 flex flex-col md:flex-row items-center ">
+    <div className="px-6 text-left text-gray-800 md:p-12 bg-gray-50 md:pt-20">
+      <div className="container flex flex-col items-center mx-auto xl:px-32 md:flex-row ">
         <div className="grid-cols-1 grid  sm:grid-cols-2 lg:grid-cols-3 gap-[4px] w-full ">
           {team.map((service, index) => (
-            <div key={index} className=" m-1 p-2 flex flex-col">
-              <div className='h-36'  >
-                <img
-                  className="w-full h-full object-cover "
-                  src="https://picsum.photos/200/300"
+            <div key={index} className="flex flex-col p-2 m-1 ">
+              <div className="relative h-64">
+                <Lottie
+                  className="absolute inset-0"
+                  animationData={founderlottie}
+                  loop={true}
+                  height="100%"
+                  width="100%"
                 />
+                {/* <Image
+                  alt="team-image"
+                  width={64}
+                  height={64}
+                  className="absolute rounded-sm top-50 left-50"
+                  src={'/bubbles.png'}
+                /> */}
               </div>
 
               <h6 className="font-semibold text-blue-600 ">{service.name}</h6>

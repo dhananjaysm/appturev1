@@ -9,26 +9,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import arrow_arc from './arrow_arc.json';
 
-const BackgroundImage = styled.div`
-  background-image: url('/bubbles.png');
-  background-size: cover;
-  background-position: center;
-  @animation: moveBg 15s linear infinite;
-  @keyframes moveBg {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-`;
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
@@ -36,32 +18,44 @@ const navigation = [
   { name: 'About Us', href: '/about' },
   { name: 'Careers', href: '/careers' },
 ];
+
+const debounce = (func: Function, wait: number) => {
+  let timeout: NodeJS.Timeout;
+  return function (event: any) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func(event);
+    }, wait);
+  };
+};
 const NavbarTail = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { scrolling, scroll } = useScrollStore((s) => s);
+  let prevScrollTop = 0;
+
   const handleScroll = () => {
-    // your scroll effects logic here
     let scrollTop = window.scrollY;
-    let lastScrollTop = 0;
-    // let header = document.getElementById('header');
-    if (scrollTop > lastScrollTop) {
+    if (prevScrollTop < scrollTop) {
       scrolling(true);
     } else {
       scrolling(false);
     }
-    lastScrollTop = scrollTop;
+    prevScrollTop = scrollTop;
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
+    window.addEventListener('scroll', handleStopScrolling);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleStopScrolling);
     };
   }, []);
-  // console.log(scroll);
-  //   console.log(pathname?.split('/').slice(1)[0]);
+
+  const handleStopScrolling = debounce(() => {
+    scrolling(false);
+  }, 100);
   return (
     <div
       className={clsx(
