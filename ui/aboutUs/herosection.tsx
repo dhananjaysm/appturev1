@@ -1,6 +1,6 @@
 'use client';
 import Lottie from 'lottie-react';
-import teamlottie from '../../landing/lottie_files/team.json';
+import teamlottie from '../landing/lottie_files/team.json';
 
 const AboutUsHeroSection = () => {
   return (
