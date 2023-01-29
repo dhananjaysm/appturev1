@@ -1,4 +1,3 @@
-
 'use client';
 
 import clsx from 'clsx';
@@ -41,7 +40,6 @@ const initialFormData: FormData = {
   aboutProfile: '',
   experience: '',
 };
-
 
 import spinner from './dot-rotate.svg';
 
@@ -262,7 +260,7 @@ export default function Form() {
                   )}
                 />
                 {errors.message && (
-                  <p className="text-red-500">{errors.message} sjdfa;lsdjf</p>
+                  <p className="text-red-500">{errors.message}</p>
                 )}
               </div>
 

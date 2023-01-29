@@ -1,4 +1,4 @@
-import TechnologyWeUseCard from './TechnologyWeUseCard';
+import TechnologyWeUseCard from "./technologyWeUseCard";
 
 export type TechnologyCardType = {
   title: string;
