@@ -9,8 +9,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import arrow_arc from './arrow_arc.json';
-
+import { arrow_arc } from '../assets';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },

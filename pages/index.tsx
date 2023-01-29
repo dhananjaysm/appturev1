@@ -1,7 +1,7 @@
-import HeroSection from '#/ui/landing/HeroSection';
-import PortfolioSection from '#/ui/landing/PortfolioSection';
-import ServicesSection from '#/ui/landing/ServicesSection';
-import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
+import PrimaryLayout from '#/ui/layouts/PrimaryLayout';
+import HeroSection from '#/ui/universal/HeroSection';
+import PortfolioSection from '#/ui/universal/PortfolioSection';
+import ServicesSection from '#/ui/universal/ServicesSection';
 
 import { NextPageWithLayout } from './page';
 
