@@ -1,7 +1,7 @@
-import AboutUsHeroSection from '#/ui/components/aboutUs/AboutHeroSection';
-import TeamCardContainer from '#/ui/components/aboutUs/AboutTeamCard';
-import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
+import PrimaryLayout from '#/ui/layouts/PrimaryLayout';
 import CompanyValues from '#/ui/universal/AboutCompanyValues';
+import AboutUsHeroSection from '#/ui/universal/AboutHeroSection';
+import TeamCardContainer from '#/ui/universal/AboutTeamCard';
 import { NextPageWithLayout } from '../page';
 
 const About: NextPageWithLayout = () => {

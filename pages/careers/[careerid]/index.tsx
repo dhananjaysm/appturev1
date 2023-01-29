@@ -1,6 +1,6 @@
 import { NextPageWithLayout } from '#/pages/page';
-import CareerForm from '#/ui/career/components/CareerForm';
 import CareerLayout from '#/ui/layouts/CareerLayout';
+import CareerForm from '#/ui/universal/CareerForm';
 
 const CareerPage: NextPageWithLayout = () => {
   return (

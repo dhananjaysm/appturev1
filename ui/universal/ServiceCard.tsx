@@ -1,6 +1,5 @@
 import Lottie from 'lottie-react';
-import Link from 'next/link';
-import { Service } from './ServicesSection';
+import { Service } from './types';
 
 const ServiceCard = ({ name, description, url, lottie }: Service) => {
   return (
@@ -10,12 +9,12 @@ const ServiceCard = ({ name, description, url, lottie }: Service) => {
         <p className="hidden mb-6 text-base sm:block ">{description}</p>
 
         <Lottie animationData={lottie} loop={true} className="w-64 h-64 " />
-        <Link
+        {/* <Link
           href={url}
           className="justify-start block font-medium text-purple-600"
         >
           Know more
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

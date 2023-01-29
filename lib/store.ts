@@ -1,4 +1,4 @@
-import { Filter } from '#/ui/career/components/FilterCareer';
+import { Filter } from '#/ui/universal/types';
 import create from 'zustand';
 import { filters } from './demo';
 

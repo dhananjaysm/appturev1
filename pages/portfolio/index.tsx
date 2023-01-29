@@ -1,4 +1,4 @@
-import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
+import PrimaryLayout from '#/ui/layouts/PrimaryLayout';
 import clsx from 'clsx';
 import { NextPageWithLayout } from '../page';
 type Client = {

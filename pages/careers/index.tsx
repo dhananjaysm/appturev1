@@ -1,6 +1,6 @@
 'use client';
-import CareerSection from '#/ui/career/CareerSection';
 import CareerLayout from '#/ui/layouts/CareerLayout';
+import CareerSection from '#/ui/universal/CareerSection';
 import { useEffect } from 'react';
 import { NextPageWithLayout } from '../page';
 

@@ -1,6 +1,6 @@
-import TechnologyWeUse from '#/ui/components/services/ServicesTechnology';
-import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
+import PrimaryLayout from '#/ui/layouts/PrimaryLayout';
 import ServicesHeroSection from '#/ui/universal/ServicesPageComponent';
+import TechnologyWeUse from '#/ui/universal/ServicesTechnology';
 import { NextPageWithLayout } from '../page';
 
 const Services: NextPageWithLayout = () => {

@@ -1,5 +1,5 @@
-import FormContact from '#/ui/contact/FormContact';
-import ContactLayout from '#/ui/layouts/primary/ContactLayout';
+import ContactLayout from '#/ui/layouts/ContactLayout';
+import FormContact from '#/ui/universal/FormContact';
 import { NextPageWithLayout } from '../page';
 
 const Contact: NextPageWithLayout = () => {

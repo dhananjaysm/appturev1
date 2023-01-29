@@ -1,3 +1,11 @@
+import {
+  digitallottie,
+  hr_lottie2,
+  mobilelottie,
+  softwarelottie,
+  training,
+  webdevlottie,
+} from '#/ui/assets';
 import { Service, TechnologyCardType } from '#/ui/universal/types';
 export const whoWeAre = [
   {
@@ -61,7 +69,7 @@ export const services: Service[] = [
     description:
       'We provide access to a wide range of specialized skills and expertise without the need for long-term hires. By outsourcing these resources, companies can streamline their operations and achieve greater efficiency and success in their tech endeavors',
     url: '#',
-    lottie: hrlottie2,
+    lottie: hr_lottie2,
   },
 
   {
