@@ -1,7 +1,11 @@
 import PrimaryLayout from '#/ui/layouts/PrimaryLayout';
 import ServicesHeroSection from '#/ui/universal/ServicesPageComponent';
-import TechnologyWeUse from '#/ui/universal/ServicesTechnology';
+import dynamic from 'next/dynamic';
 import { NextPageWithLayout } from '../page';
+
+const TechnologyWeUse = dynamic(
+  () => import('#/ui/universal/ServicesTechnology')
+);
 
 const Services: NextPageWithLayout = () => {
   return (

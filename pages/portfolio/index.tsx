@@ -1,5 +1,6 @@
 import PrimaryLayout from '#/ui/layouts/PrimaryLayout';
 import clsx from 'clsx';
+import Image from 'next/image';
 import { NextPageWithLayout } from '../page';
 type Client = {
   name?: string;
@@ -28,7 +29,13 @@ const Portfolio: NextPageWithLayout = () => {
           {clients.map((client, index) => {
             return (
               <div key={index} className="p-6 ">
-                <img src={client.image} className={clsx('')} />
+                <div>
+                  <Image
+                    src={client.image}
+                    alt="client-image"
+                    className={clsx('')}
+                  />
+                </div>
               </div>
             );
           })}

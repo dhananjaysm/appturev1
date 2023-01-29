@@ -1,9 +1,12 @@
 import PrimaryLayout from '#/ui/layouts/PrimaryLayout';
 import HeroSection from '#/ui/universal/HeroSection';
-import PortfolioSection from '#/ui/universal/PortfolioSection';
-import ServicesSection from '#/ui/universal/ServicesSection';
-
+import dynamic from 'next/dynamic';
 import { NextPageWithLayout } from './page';
+
+const PortfolioSection = dynamic(
+  () => import('#/ui/universal/PortfolioSection')
+);
+const ServicesSection = dynamic(() => import('#/ui/universal/ServicesSection'));
 
 const Home: NextPageWithLayout = () => {
   return (

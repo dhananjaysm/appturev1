@@ -1,8 +1,10 @@
 'use client';
 import { useFilterStore } from '#/lib/store';
-import CareerCard from './CareerCard';
 import FilterCareer from './FilterCareer';
 import { Career } from './types';
+import dynamic from 'next/dynamic';
+
+const CareerCard = dynamic(() => import('./CareerCard'));
 
 const careers: Career[] = [
   {
