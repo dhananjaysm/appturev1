@@ -2,8 +2,6 @@
 
 import clsx from 'clsx';
 import { useState } from 'react';
-import contact_lottie from '#/ui/contact/contact_us.json';
-import Lottie from 'lottie-react';
 
 interface FormData {
   name: string;

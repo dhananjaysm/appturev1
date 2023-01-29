@@ -1,5 +1,3 @@
-'use client';
-
 import { useScrollStore } from '#/lib/store';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -9,8 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import arrow_arc from './arrow_arc.json';
-
+// import { arrow_arc } from './arrow_arc.json';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
@@ -128,12 +125,12 @@ const NavbarTail = () => {
       </div>
       {pathname?.split('/').slice(1).includes('contact') ? null : (
         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-          <Lottie
-            animationData={arrow_arc}
+          {/* <Lottie
+            // animationData={arrow_arc}
             loop={true}
             className="w-10"
             size={20}
-          />
+          /> */}
 
           <Link
             href="/contact"

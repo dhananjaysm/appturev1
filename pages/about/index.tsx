@@ -1,8 +1,16 @@
-import CompanyValues from '#/ui/components/aboutUs/companyValues';
-import AboutUsHeroSection from '#/ui/components/aboutUs/herosection';
-import TeamCardContainer from '#/ui/components/aboutUs/teamCardContainer';
 import PrimaryLayout from '#/ui/layouts/primary/PrimaryLayout';
 import { NextPageWithLayout } from '../page';
+import dynamic from 'next/dynamic';
+
+const CompanyValues = dynamic(
+  () => import('#/ui/components/aboutUs/companyValues')
+);
+const AboutUsHeroSection = dynamic(
+  () => import('#/ui/components/aboutUs/herosection')
+);
+const TeamCardContainer = dynamic(
+  () => import('#/ui/components/aboutUs/teamCardContainer')
+);
 
 const About: NextPageWithLayout = () => {
   return (
