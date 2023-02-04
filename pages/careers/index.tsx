@@ -18,7 +18,7 @@ const CareerPage: NextPageWithLayout = () => {
       const data = doc.data();
       const carrerObj = {
         id: data.id,
-        role: data.id,
+        role: data.role,
         category: data.category,
         description: data.description,
         location: data.location,

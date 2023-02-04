@@ -30,7 +30,6 @@ const CareerForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrors({});
-    console.log(formData);
 
     let newErrors: { [key: string]: string } = {};
 

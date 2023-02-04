@@ -55,7 +55,6 @@ const CareerCard = dynamic(() => import('./CareerCard'));
 //   },
 // ];
 const CareerSection = ({ careers }: { careers: Career[] }) => {
-  console.log(careers, 'careers');
   const { selectFilter, filter } = useFilterStore((s) => s);
   let filteredCareers = careers;
   if (filter.category == 'all') {
