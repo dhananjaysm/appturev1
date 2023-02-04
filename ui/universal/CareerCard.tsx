@@ -48,7 +48,7 @@ const CareerCard = ({ career }: { career: Career }) => {
         </div>
       </div>
       <div className="flex flex-row justify-end flex-1">
-        <Link href={`/careers/${career.id}`} className="">
+        <Link href={`/careers/${career.role}`} className="">
           <span className="px-4 py-2 text-md text-gray-700 font-semibold border rounded-md bg-[#FAAA8D] hover:bg-[#FF4000] hover:text-white ">
             Apply
           </span>

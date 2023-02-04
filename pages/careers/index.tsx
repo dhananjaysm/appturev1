@@ -1,28 +1,58 @@
 'use client';
 import CareerLayout from '#/ui/layouts/CareerLayout';
 import CareerSection from '#/ui/universal/CareerSection';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { NextPageWithLayout } from '../page';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase';
+import { Career } from '#/ui/universal/types';
 
-const Career: NextPageWithLayout = () => {
-  const fetchTodos = async () => {
-    const response = await fetch('/api/admin/career');
-    const data = await response.json();
-    // console.log(data);
-  };
+const CareerPage: NextPageWithLayout = () => {
+  const [careers, setCareers] = useState<Career[]>([]);
+
+  async function getCareerData() {
+    const querySnapshot = await getDocs(collection(db, 'Job Openings'));
+    let careersArray: Career[] = [];
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      const data = doc.data();
+      const carrerObj = {
+        id: data.role,
+        role: data.role,
+        category: data.category,
+        description: data.description,
+        location: data.location,
+        status: data.status,
+        date: data.date,
+      };
+      careersArray.push(carrerObj);
+    });
+
+    setCareers(careersArray);
+  }
+
+  // useEffect(() => {
+  //   getCareerData();
+  // }, []);
+  // const fetchTodos = async () => {
+  //   const response = await fetch('/api/admin/career');
+  //   const data = await response.json();
+  //   // console.log(data);
+  // };
+
   useEffect(() => {
-    fetchTodos();
+    getCareerData();
   }, []);
 
   return (
     <div className="px-4 mt-12 sm:px-12">
       {/* <CareerHeroSection /> */}
-      <CareerSection />
+      <CareerSection careers={careers} />
     </div>
   );
 };
 
-export default Career;
-Career.getLayout = (page) => {
+export default CareerPage;
+CareerPage.getLayout = (page) => {
   return <CareerLayout>{page}</CareerLayout>;
 };

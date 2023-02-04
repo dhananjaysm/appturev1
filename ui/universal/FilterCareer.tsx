@@ -8,7 +8,6 @@ import { useState } from 'react';
 const FilterCareer = () => {
   const [isActive, setIsActive] = useState(1);
   const { selectFilter, filter } = useFilterStore((s) => s);
-  console.log(filter);
   return (
     <div className="flex flex-row space-x-6 overflow-x-scroll filters">
       {filters.map((filter, i) => {

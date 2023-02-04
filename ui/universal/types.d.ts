@@ -19,6 +19,7 @@ interface FormData {
   profile: string;
   aboutProfile: string;
   experience: string;
+  resumeLink: string;
 }
 
 interface Errors {
@@ -31,6 +32,7 @@ interface Errors {
   profile?: string;
   aboutProfile?: string;
   experience?: string;
+  resumeLink?: string;
 }
 
 export type Filter = {

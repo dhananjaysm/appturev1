@@ -23,7 +23,7 @@ export const useFilterStore = create<FilterState>()((set) => ({
 }));
 
 interface CareerState {
-  careers: any;
+  role: string;
 }
 
 /*

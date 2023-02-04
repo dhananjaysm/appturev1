@@ -1,7 +1,9 @@
 import CareerHeroSection from '#/ui/universal/CareerHeroSection';
-import FooterSection from '#/ui/universal/FooterSection';
 import NavbarTail from '#/ui/universal/NavbarTail';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+
+const FooterSection = dynamic(() => import('#/ui/universal/FooterSection'));
 
 export interface ICareerLayout extends React.ComponentPropsWithoutRef<'div'> {
   justify?: 'items-center' | 'items-start';

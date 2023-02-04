@@ -1,7 +1,9 @@
-import FooterSection from '#/ui/universal/FooterSection';
 import NavbarTail from '#/ui/universal/NavbarTail';
 import Head from 'next/head';
-import Form from '../universal/Form';
+import dynamic from 'next/dynamic';
+
+const Form = dynamic(() => import('../universal/Form'));
+const FooterSection = dynamic(() => import('#/ui/universal/FooterSection'));
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
   justify?: 'items-center' | 'items-start';
