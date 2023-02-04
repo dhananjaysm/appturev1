@@ -55,22 +55,23 @@ const CareerCard = dynamic(() => import('./CareerCard'));
 //   },
 // ];
 const CareerSection = ({ careers }: { careers: Career[] }) => {
+  console.log(careers, "CareerArr")
   const { selectFilter, filter } = useFilterStore((s) => s);
   let filteredCareers = careers;
-  if (filter.category == 'all') {
-    filteredCareers = careers;
-  } else {
-    filteredCareers = careers.filter(
-      (career) => career.category == filter.category
-    );
-  }
+  // if (filter.category == 'all') {
+  //   filteredCareers = careers;
+  // } else {
+  //   filteredCareers = careers.filter(
+  //     (career) => career.category == filter.category
+  //   );
+  // }
   return (
     <div className="mb-10 space-y-2">
       <div className="">
         <FilterCareer />
       </div>
       <hr />
-      {filteredCareers.map((career, i) => (
+      {careers.map((career, i) => (
         <div key={i} className="mb-2">
           <CareerCard career={career} />
         </div>

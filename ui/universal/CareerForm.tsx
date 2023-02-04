@@ -2,6 +2,9 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Errors, FormData } from './types';
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { db } from '#/firebase';
+import ShowToast from './ShowToastMessage';
 
 const initialFormData: FormData = {
   firstName: '',
@@ -15,7 +18,7 @@ const initialFormData: FormData = {
   experience: '',
 };
 
-const CareerForm = () => {
+const CareerForm = ({ jobRole }: { jobRole: string }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState<Errors>({});
 
@@ -69,8 +72,29 @@ const CareerForm = () => {
       console.log(formData);
 
       // Make API call or do something else with the form data
+      submitForm(formData);
     }
   };
+
+  async function submitForm(formData: Object) {
+    await addDoc(collection(db, jobRole), {
+      ...formData,
+    });
+
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      city: '',
+      state: '',
+      postalCode: '',
+      profile: '',
+      aboutProfile: '',
+      experience: '',
+    });
+
+    ShowToast('Application sent!', 'success');
+  }
 
   return (
     <>
@@ -103,7 +127,7 @@ const CareerForm = () => {
                           type="text"
                           name="firstName"
                           id="firstName"
-                          // value={formData.firstName}
+                          value={formData.firstName}
                           onChange={(e) => handleChange(e)}
                           autoComplete="given-name"
                           className={clsx(
@@ -129,6 +153,7 @@ const CareerForm = () => {
                         <input
                           type="text"
                           name="lastName"
+                          value={formData.lastName}
                           onChange={(e) => handleChange(e)}
                           id="lastName"
                           autoComplete="family-name"
@@ -154,6 +179,7 @@ const CareerForm = () => {
                         </label>
                         <input
                           type="text"
+                          value={formData.email}
                           onChange={(e) => handleChange(e)}
                           name="email"
                           id="email"
@@ -180,6 +206,7 @@ const CareerForm = () => {
                         </label>
                         <input
                           type="text"
+                          value={formData.city}
                           onChange={(e) => handleChange(e)}
                           name="city"
                           id="city"
@@ -205,6 +232,7 @@ const CareerForm = () => {
                         </label>
                         <input
                           type="text"
+                          value={formData.state}
                           onChange={(e) => handleChange(e)}
                           name="state"
                           id="state"
@@ -230,6 +258,7 @@ const CareerForm = () => {
                         </label>
                         <input
                           type="text"
+                          value={formData.postalCode}
                           onChange={(e) => handleChange(e)}
                           name="postalCode"
                           id="postalCode"
@@ -279,6 +308,7 @@ const CareerForm = () => {
                       <div className="flex mt-1 rounded-md shadow-sm">
                         <input
                           type="text"
+                          value={formData.profile}
                           onChange={(e) => handleChange(e)}
                           name="profile"
                           id="profile"
@@ -307,6 +337,7 @@ const CareerForm = () => {
                           type="text"
                           name="experience"
                           id="experience"
+                          value={formData.experience}
                           onChange={(e) => handleChange(e)}
                           className={clsx(
                             'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
@@ -332,6 +363,7 @@ const CareerForm = () => {
                     </label>
                     <div className="mt-1">
                       <textarea
+                        value={formData.aboutProfile}
                         onChange={(e) => handleChange(e)}
                         name="aboutProfile"
                         id="aboutProfile"
