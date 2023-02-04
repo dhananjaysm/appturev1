@@ -16,6 +16,7 @@ const initialFormData: FormData = {
   profile: '',
   aboutProfile: '',
   experience: '',
+  resumeLink: '',
 };
 
 const CareerForm = ({ jobRole }: { jobRole: string }) => {
@@ -65,6 +66,9 @@ const CareerForm = ({ jobRole }: { jobRole: string }) => {
     if (!formData.experience) {
       newErrors.experience = 'Experience is required';
     }
+    if (!formData.resumeLink) {
+      newErrors.resumeLink = 'Resume is required';
+    }
 
     if (Object.keys(newErrors).length) {
       setErrors(newErrors);
@@ -91,6 +95,7 @@ const CareerForm = ({ jobRole }: { jobRole: string }) => {
       profile: '',
       aboutProfile: '',
       experience: '',
+      resumeLink: '',
     });
 
     ShowToast('Application sent!', 'success');
@@ -382,6 +387,55 @@ const CareerForm = ({ jobRole }: { jobRole: string }) => {
                     <p className="mt-2 text-sm text-gray-500">
                       Brief description for your profile.
                     </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden sm:block" aria-hidden="true">
+            <div className="py-5">
+              <div className="border-t border-gray-200" />
+            </div>
+          </div>
+
+          <div className="md:grid md:grid-cols-3 md:gap-6">
+            <div className="md:col-span-1">
+              <div className="px-4 sm:px-0">
+                <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  Resume
+                </h3>
+              </div>
+            </div>
+            <div className="mt-5 md:col-span-2 md:mt-0">
+              <div className="shadow sm:overflow-hidden sm:rounded-md">
+                <div className="px-4 py-5 space-y-6 bg-white sm:p-6">
+                  <div className="col-span-3 sm:col-span-2">
+                    <label
+                      htmlFor="role"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Google drive link*
+                    </label>
+                    <div className="flex mt-1 rounded-md shadow-sm">
+                      <input
+                        type="text"
+                        value={formData.profile}
+                        onChange={(e) => handleChange(e)}
+                        name="profile"
+                        id="profile"
+                        className={clsx(
+                          'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                          {
+                            'ring-2 ring-red-500 ring-offset-red-700':
+                              errors.resumeLink,
+                          }
+                        )}
+                      />
+                    </div>
+                    {errors.resumeLink && (
+                      <p className="text-red-500">{errors.resumeLink}</p>
+                    )}
                   </div>
                 </div>
               </div>
