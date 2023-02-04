@@ -7,7 +7,7 @@ import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { Career } from '#/ui/universal/types';
 
-const Career: NextPageWithLayout = () => {
+const CareerPage: NextPageWithLayout = () => {
   const [careers, setCareers] = useState<Career[]>([]);
 
   async function getCareerData() {
@@ -52,7 +52,7 @@ const Career: NextPageWithLayout = () => {
   );
 };
 
-export default Career;
-Career.getLayout = (page) => {
+export default CareerPage;
+CareerPage.getLayout = (page) => {
   return <CareerLayout>{page}</CareerLayout>;
 };
