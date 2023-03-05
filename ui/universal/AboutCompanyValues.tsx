@@ -40,20 +40,20 @@ const team: Team[] = [
 const members: Member[] = [
   {
     name: 'Manish Sharma',
-    designation: 'ABC',
-    image: 'https://via.placeholder.com/300x200',
+    designation: 'CEO',
+    image: 'Manish.jpeg',
     link: '#',
   },
   {
     name: 'Dhananjay Singh',
-    designation: 'ABC',
+    designation: 'CTO',
     description: 'IIT Bombay Alumnus',
-    image: 'https://via.placeholder.com/300x200',
+    image: 'Dhananjay.jpeg',
   },
   {
-    name: 'XYZ',
-    designation: 'CXO',
-    image: 'https://via.placeholder.com/300x200',
+    name: 'Aditya Sharma',
+    designation: 'COO',
+    image: 'Aditya.jpg',
     link: '#',
   },
 
@@ -71,21 +71,24 @@ export default function CompanyValues() {
                 key={index}
                 className="flex flex-col px-4 py-6 m-1 bg-white rounded-lg shadow-md"
               >
-                <div className="relative h-20">
-                  <Lottie
+                {/* <div className="relative h-20"> */}
+                {/* <Lottie
                     className="inset-0 w-full h-full aspect-ratio:1/1"
                     animationData={founderlottie}
                     loop={true}
-                  />
-                  {/* <Image
+                  /> */}
+                {/* <Image
                   alt="team-image"
                   width={64}
                   height={64}
                   className="absolute rounded-sm top-50 left-50"
                   src={'/bubbles.png'}
                 /> */}
+                {/* <img src="C:/Users/Dell/OneDrive/Desktop/appturev1/public/appture_logo.png"></img> */}
+                {/* </div> */}
+                <div className="text-center">
+                  <img src={service.image} className="scale-75" />
                 </div>
-
                 <h6 className="mb-2 font-semibold text-center text-blue-600">
                   {service.name}
                 </h6>
