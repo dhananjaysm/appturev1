@@ -65,12 +65,12 @@ const NavbarTail = () => {
         }
       )}
 
-      // className={clsx(
-      //   'fixed top-0 z-10 mt-4 rounded-md flex items-center justify-between w-5/6 h-20 px-6 py-4 bg-white  lg:px-8 ',
-      //   {
-      //     'border-2  shadow-md': scroll,
-      //   }
-      // )}
+    // className={clsx(
+    //   'fixed top-0 z-10 mt-4 rounded-md flex items-center justify-between w-5/6 h-20 px-6 py-4 bg-white  lg:px-8 ',
+    //   {
+    //     'border-2  shadow-md': scroll,
+    //   }
+    // )}
     >
       <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
         <Link href="/" className="-m-1.5 p-1.5">
