@@ -39,7 +39,6 @@ const initialFormData: FormData = {
   experience: '',
 };
 
-import spinner from './dot-rotate.svg';
 
 const contactDetails = {
   address:
@@ -72,7 +71,7 @@ export default function Form() {
     if (!formData.phoneNumber) {
       newErrors.phoneNumber = 'Phone number is required';
     } else if (
-      !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/.test(
+      !/^\s*(?:\+?(\d{1,3}))?[-. (](\d{3})[-. )](\d{3})[-. ](\d{4})(?: *x(\d+))?\s$/.test(
         formData.phoneNumber
       )
     ) {
@@ -197,9 +196,9 @@ export default function Form() {
                     onChange={(e) => handleChange(e)}
                     placeholder="Enter full name"
                     className={clsx(
-                      'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                      'block w-full mt-1 border-gray-500 rounded-full shadow-sm focus:border-indigo-700 focus:ring-indigo-900 sm:text-sm',
                       {
-                        'ring-2 ring-red-500 ring-offset-red-700': errors.name,
+                        'ring-2 ring-red-900 ring-offset-red-700': errors.name,
                       }
                     )}
                   />
@@ -213,7 +212,7 @@ export default function Form() {
                     placeholder="Phone Number"
                     onChange={(e) => handleChange(e)}
                     className={clsx(
-                      'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                      'block w-full mt-1 border-gray-300 rounded-full shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
                       {
                         'ring-2 ring-red-500 ring-offset-red-700':
                           errors.phoneNumber,
@@ -234,7 +233,7 @@ export default function Form() {
                   name="email"
                   placeholder="Email"
                   className={clsx(
-                    'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                    'block w-full mt-1 border-gray-300 rounded-full shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
                     {
                       'ring-2 ring-red-500 ring-offset-red-700': errors.email,
                     }
@@ -251,7 +250,7 @@ export default function Form() {
                   name="message"
                   placeholder="Message"
                   className={clsx(
-                    'block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
+                    'block w-full mt-1 border-gray-300 rounded-full shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
                     {
                       'ring-2 ring-red-500 ring-offset-red-700': errors.message,
                     }
@@ -266,13 +265,7 @@ export default function Form() {
                 type="submit"
                 className="px-6 py-3 mt-3 font-bold text-white transition duration-300 ease-in-out from-[#2B81BA] via-blue-500 to-purple-500 bg-[length:400%_400%]  bg-gradient-to-r animate-border rounded-lg md:w-32 hover:bg-blue-dark hover:bg-indigo-500"
               >
-                {/* <svg
-                  className="animate-spin h-5 w-5 mr-3 ..."
-                  viewBox="0 0 24 24"
-                ></svg> */}
-                <img src={spinner} />
-                Processing...
-                {/* Submit */}
+                Submit
               </button>
             </form>
           </div>
