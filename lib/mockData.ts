@@ -37,23 +37,23 @@ export const whoWeAre = [
 export const expertise = [
   {
     name: 'Software Development',
-    url: '#',
+    url: '/services',
   },
   {
     name: 'Mobile Development',
-    url: '#',
+    url: '/services',
   },
   {
     name: 'Resource Outsourcing',
-    url: '#',
+    url: '/services',
   },
   {
     name: 'Digital Marketing',
-    url: '#',
+    url: '/services',
   },
   {
     name: 'Training',
-    url: '#',
+    url: '/services',
   },
 ];
 

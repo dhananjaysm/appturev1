@@ -3,20 +3,22 @@ import { founderlottie } from '../assets';
 type Team = {
   name: string;
   designation: string;
+  description?: string;
   image?: string;
   link?: string;
 };
 
 const team: Team[] = [
   {
-    name: 'Hritik Sharma',
-    designation: 'Engineering Manager',
+    name: 'Manish Sharma',
+    designation: 'ABC',
     image: 'https://via.placeholder.com/300x200',
     link: '#',
   },
   {
     name: 'Dhananjay Singh',
-    designation: 'CTO',
+    designation: 'ABC',
+    description: 'IIT Bombay Alumnus',
     image: 'https://via.placeholder.com/300x200',
   },
   {
@@ -25,22 +27,22 @@ const team: Team[] = [
     image: 'https://via.placeholder.com/300x200',
     link: '#',
   },
-  {
-    name: 'ABC',
-    designation: 'HR',
-    image: 'https://via.placeholder.com/300x200',
-  },
-  {
-    name: 'JKL',
-    designation: 'Manager',
-    image: 'https://via.placeholder.com/300x200',
-    link: '#',
-  },
-  {
-    name: 'FKL',
-    designation: 'Director',
-    image: 'https://via.placeholder.com/300x200',
-  },
+  // {
+  //   name: 'ABC',
+  //   designation: 'HR',
+  //   image: 'https://via.placeholder.com/300x200',
+  // },
+  // {
+  //   name: 'JKL',
+  //   designation: 'Manager',
+  //   image: 'https://via.placeholder.com/300x200',
+  //   link: '#',
+  // },
+  // {
+  //   name: 'FKL',
+  //   designation: 'Director',
+  //   image: 'https://via.placeholder.com/300x200',
+  // },
 ];
 
 export default function TeamCardContainer() {
@@ -69,6 +71,8 @@ export default function TeamCardContainer() {
 
               <h6 className="font-semibold text-blue-600 ">{service.name}</h6>
               <p className="text-10px">{service.designation}</p>
+              <p className="text-10px">{service.description}</p>
+
             </div>
           ))}
         </div>

@@ -7,14 +7,14 @@ const CompanyValues = dynamic(
   () => import('#/ui/universal/AboutCompanyValues')
 );
 const TeamCardContainer = dynamic(
-  () => import('#/ui/universal/AboutCompanyValues')
+  () => import('#/ui/universal/AboutTeamCard')
 );
 
 const About: NextPageWithLayout = () => {
   return (
     <div>
       <AboutUsHeroSection />
-      <TeamCardContainer />
+      {/* <TeamCardContainer /> */}
       <CompanyValues />
     </div>
   );
