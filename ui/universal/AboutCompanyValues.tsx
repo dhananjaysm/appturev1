@@ -92,7 +92,7 @@ export default function CompanyValues() {
                   <img
                     src={service.image}
                     className="scale-75"
-                    style={{ borderRadius: '50%', }}
+                    style={{ borderRadius: '27%', }}
                   />
                 </div>
                 <h6 className="mb-2 font-semibold text-center text-blue-600">

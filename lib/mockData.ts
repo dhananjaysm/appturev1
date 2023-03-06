@@ -67,7 +67,7 @@ export const services: Service[] = [
   {
     name: 'Resource Outsourcing',
     description:
-      'We provide access to a wide range of specialized skills and expertise without the need for long-term hires. By outsourcing these resources, companies can streamline their operations and achieve greater efficiency and success in their tech endeavors',
+      'We provide Access specialized skills and expertise without long-term hires. Outsource to streamline operations and achieve tech success.',
     url: '#',
     lottie: hr_lottie2,
   },
@@ -83,7 +83,7 @@ export const services: Service[] = [
   {
     name: 'Mobile App Development',
     description:
-      'Picking the right approach to mobile app development is a critical success factor that can make or break your project.',
+      'Picking the right team of experienced developers ensures the delivery of high-quality and scalable apps that provide a seamless user experience.',
     url: '#',
 
     lottie: mobilelottie,

@@ -33,6 +33,8 @@ const Portfolio: NextPageWithLayout = () => {
                   <Image
                     src={client.image}
                     alt="client-image"
+                    width={200}
+                    height={100}
                     className={clsx('')}
                   />
                 </div>
