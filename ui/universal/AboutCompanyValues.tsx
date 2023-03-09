@@ -41,21 +41,21 @@ const members: Member[] = [
   {
     name: 'Manish Sharma',
     designation: 'CEO',
-    description: ' Director of Appture, having 7+ years of experience in human resource.',
-    image: 'Manish1.jpeg',
+    description: ' Director of Appture, having 11+ years of experience in human resource.',
+    image: 'EManish.jpg',
     link: '#',
   },
   {
     name: 'Dhananjay Singh',
     designation: 'CTO',
     description: 'IIT Bombay Alumnus, +4 Years of developing tech products',
-    image: 'Dhananjay1.jpeg',
+    image: 'EDhananjay.jpg',
   },
   {
     name: 'Aditya Sharma',
     designation: 'Project Lead',
     description: 'Software Developer having 4 years of experience in tech industry',
-    image: 'Aditya.jpg',
+    image: 'EAdi.jpg',
     link: '#',
   },
 
@@ -92,7 +92,7 @@ export default function CompanyValues() {
                   <img
                     src={service.image}
                     className="scale-75"
-                    style={{ borderRadius: '27%', }}
+                    style={{ borderRadius: '50%', }}
                   />
                 </div>
                 <h6 className="mb-2 font-semibold text-center text-blue-600">
