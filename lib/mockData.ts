@@ -116,26 +116,26 @@ export const services: Service[] = [
 export const technologyCardArray: TechnologyCardType[] = [
   {
     title: 'WEB DEVELOPMENT',
-    cardImage: '',
+    cardImage: '/top11.png',
     titleImage: '',
     direction: '',
   },
   {
     title: 'APP DEVELOPMENT',
-    cardImage: '',
+    cardImage: '/appDevlop.jpg',
     titleImage: '',
     direction: 'reverse',
   },
   {
     title: 'DEVOPS',
-    cardImage: '',
+    cardImage: '/-devop.jpg',
     titleImage: '',
     direction: '',
   },
-  {
-    title: 'ENGAGEMENT MODELS',
-    cardImage: '',
-    titleImage: '',
-    direction: 'reverse',
-  },
+  // {
+  //   title: 'ENGAGEMENT MODELS',
+  //   cardImage: '/engage.png',
+  //   titleImage: '',
+  //   direction: 'reverse',
+  // },
 ];

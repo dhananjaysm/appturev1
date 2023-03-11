@@ -10,7 +10,7 @@ const FooterSection = () => {
             <img src="appture-png-min.png" className="scale-75" />
           </div>
           <div className="flex flex-wrap justify-center gap-2">
-            <a href="https://www.facebook.com/appture.itgroup.5?mibextid=ZbWKwL">
+            <a href="https://www.facebook.com/appture.itgroup.5?mibextid=ZbWKwL" target="_blank" rel="noreferrer">
               <button className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-500 rounded" >
                 <svg
                   className="w-5 h-5 fill-current"
@@ -22,7 +22,7 @@ const FooterSection = () => {
                 </svg>
               </button></a>
 
-            <a href="https://twitter.com/apture_tech?t=BHJJ_tD4ms0PuzWUPp4lpA&s=08">
+            <a href="https://twitter.com/apture_tech?t=BHJJ_tD4ms0PuzWUPp4lpA&s=08" target="_blank" rel="noreferrer">
               <button className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-400 rounded">
                 <svg
                   className="w-5 h-5 fill-current"
@@ -34,7 +34,7 @@ const FooterSection = () => {
                 </svg>
               </button>
             </a>
-            <a href="https://www.linkedin.com/company/appture-technology/">
+            <a href="https://www.linkedin.com/company/appture-technology/" target="_blank" rel="noreferrer">
               <button className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-600 rounded">
                 <svg
                   className="w-5 h-5 fill-current"
@@ -48,7 +48,7 @@ const FooterSection = () => {
                 </svg>
               </button>
             </a>
-            <a href="https://instagram.com/appturetechnology?igshid=YmMyMTA2M2Y=">
+            <a href="https://instagram.com/appturetechnology?igshid=YmMyMTA2M2Y=" target="_blank" rel="noreferrer">
               <button className="inline-flex items-center p-2 space-x-2 font-semibold text-white bg-blue-600 rounded">
                 <svg
                   className="w-5 h-5 fill-current bi bi-instagram"
