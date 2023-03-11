@@ -1,17 +1,17 @@
 'use client';
 import CareerLayout from '#/ui/layouts/CareerLayout';
 import CareerSection from '#/ui/universal/CareerSection';
-import { useEffect, useState } from 'react';
-import { NextPageWithLayout } from '../page';
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase';
 import { Career } from '#/ui/universal/types';
+import { collection, getDocs } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { db } from '../../firebase';
+import { NextPageWithLayout } from '../page';
 
 const CareerPage: NextPageWithLayout = () => {
   const [careers, setCareers] = useState<Career[]>([]);
 
   async function getCareerData() {
-    const querySnapshot = await getDocs(collection(db, 'Job Openings'));
+    const querySnapshot = await getDocs(collection(db, 'careers'));
     let careersArray: Career[] = [];
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
