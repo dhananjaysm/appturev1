@@ -249,7 +249,7 @@ export default function FormContact() {
                   type="submit"
                   className="px-6 py-3 mt-3 font-bold text-white transition duration-300 ease-in-out from-[#2B81BA] via-blue-500 to-purple-500 bg-[length:400%_400%]  bg-gradient-to-r animate-border rounded-lg md:w-32 hover:bg-blue-dark hover:bg-indigo-500"
                 >
-                  Submit
+                  Contact
                 </button>
               </form>
             </div>

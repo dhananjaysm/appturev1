@@ -187,6 +187,8 @@ const NavbarTail = () => {
                     className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-400/10"
                   >
                     {item.name}
+                    {pathname?.split('/').slice(1).includes(item.name.toLocaleLowerCase()) ?
+                      (<span className="block max-w-full transition-all duration-300 h-0.5 bg-sky-600"></span>) : null}
                   </a>
                 ))}
               </div>
